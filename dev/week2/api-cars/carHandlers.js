@@ -1,4 +1,6 @@
 const Car = require("./carLib");
+//json requests and responses
+
 
 const getAllCars = (req,res) => {
     const cars = Car.getAll();
@@ -6,10 +8,15 @@ const getAllCars = (req,res) => {
 };
 
 const createCar = (req,res) =>{
-    const {model, color, age} = req.body;
+    if (model !== undefined){
+        const { model, color, age } = req.body;
+        //  -> TypeError: Cannot destructure property 'model' of 'req.body' as it is undefined.
+        
+        //const { model='N/A', color='N/A', age='N/A' } = req.body || {};
+        //  -> TypeError: Cannot read properties of undefined (reading 'model')
 
-    const newCar = Car.addOne(model,color,age);
-
+        const newCar = Car.addOne(model,color,age);
+    }
     if (newCar){
         res.json(newCar);
     } else {
@@ -39,4 +46,24 @@ const updateCar = (Req, res) => {
     }else{
         res.status(404).json({message:"Car not found"})
     }
+}
+
+const deleteCar = (req,res) =>{
+    const carId = req.params.carId;
+    
+    const isDeleted = Car.deleteOneById(carId);
+
+    if (isDeleted) {
+        res.json({message:"Car deleted successfully"});
+    }else{
+        res.status(404).json({message:"Car not found"});
+    }
+};
+
+module.exports={
+    getAllCars,
+    getCarById,
+    createCar,
+    updateCar,
+    deleteCar,
 }
