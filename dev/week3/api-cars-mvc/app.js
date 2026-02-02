@@ -15,6 +15,6 @@ app.use('/users', userRouter);
 const port = 4000;
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on port ${port} at ${new Date().toString()} `);
+  console.log(`Server is running on port ${port} at ${new Date().toString()}`);
 });
 
