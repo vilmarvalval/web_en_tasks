@@ -1,0 +1,46 @@
+GET http://127.0.0.1:4000/cars
+
+###
+
+POST http://127.0.0.1:4000/cars
+
+Content-Type: application/json
+
+{
+    "model": "Toyota Camry",
+    "color" : "Blue",
+    "age": 3
+}
+
+###
+
+GET http://127.0.0.1:4000/users
+
+###
+
+POST http://127.0.0.1:4000/users
+Content-Type: application/json
+
+{
+    "name": "Matti Seppänen",
+    "password": "M@45mtg$",
+    "username": "mattis",
+    "address": "Mannerheimintie 14, 00100 Helsinki",
+    "age": 20
+}
+
+###
+
+GET http://127.0.0.1:4000/users/4
+
+###
+
+PUT http://127.0.0.1:4000/users/4
+Content-Type: application/json
+{
+    "age": 24
+}
+
+###
+
+DELETE http://127.0.0.1:4000/users/1
