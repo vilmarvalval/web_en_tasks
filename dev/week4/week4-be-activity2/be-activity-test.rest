@@ -1,0 +1,19 @@
+
+//GET gives an invalid endpoint. POST times out and crashes the server 
+
+GET http://127.0.0.1:4000/cars
+
+###
+
+POST http://127.0.0.1:4000/cars
+Content-Type: application/json
+
+{
+  "model": "Toyota",
+  "color": "red",
+  "age": 3
+}
+
+###
+
+GET http://127.0.0.1:4000/cars/1

@@ -1,0 +1,17 @@
+
+GET http://127.0.0.1:4000/api/cars
+
+###
+
+POST http://127.0.0.1:4000/api/cars
+Content-Type: application/json
+
+{
+  "model": "Toyota",
+  "color": "red",
+  "age": 3
+}
+
+###
+
+GET http://127.0.0.1:4000/cars/1
