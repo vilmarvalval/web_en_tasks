@@ -1,0 +1,29 @@
+GET http://127.0.0.1:4000/cars
+
+###
+
+POST http://127.0.0.1:4000/cars
+Content-Type: application/json
+
+{
+    "model": "Toyota Camry",
+    "color": "Blue",
+    "age": 3
+}
+
+###
+
+GET http://127.0.0.1:4000/cars/1
+
+###
+
+PUT http://127.0.0.1:4000/cars/1
+Content-Type: application/json
+
+{
+    "age": 4
+}
+
+###
+
+DELETE http://127.0.0.1:4000/cars/1
